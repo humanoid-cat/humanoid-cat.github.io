@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Constraints as Terminations (CaT) enforces constraints through stochastic terminations during policy learning.">
+        content="A minimalist RL architecture for humanoid locomotion and loco-manipulation.">
   <meta name="keywords" content="CaT, Reinforcement Learning, Legged Locomotion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CaT: Constraints as Terminations for Legged Locomotion Reinforcement Learning</title>
+  <title>Learning Humanoid Loco-manipulation with Constraints as Terminations</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -88,41 +88,26 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CaT: Constraints as Terminations for Legged Locomotion Reinforcement Learning</h1>
+          <h1 class="title is-1 publication-title">Learning Humanoid Loco-manipulation with Constraints as Terminations</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/elliot-chane-sane/">Elliot Chane-Sane</a><sup>*,1</sup>,</span>
-            <span class="author-block">
-              <a href="https://paleziart.github.io/">Pierre-Alexandre Leziart</a><sup>*,1</sup>,</span>
-            <span class="author-block">
-              <a href="">Thomas Flayols</a><sup>1</sup>,
+              <a href="https://paleziart.github.io/">Pierre-Alexandre Leziart</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homepages.laas.fr/ostasse/hugo/">Olivier Stasse</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="">Philippe Souères</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://gepettoweb.laas.fr/index.php/Members/NicolasMansard">Nicolas Mansard</a><sup>1,2</sup>
+              <a href="">Mitsuharu Morisawa</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>*</sup> Equal contribution,</span>
-            <span class="author-block"><sup>1</sup> LAAS-CNRS,</span>
-            <span class="author-block"><sup>2</sup> Artificial and Natural Intelligence Toulouse Institute</span>
+            <span class="author-block"><sup>1</sup> CNRS-AIST JRL (Joint Robotics Laboratory), Japan</span>
           </div>
-
-          </br>
-          <div class="is-size-5 column has-text-centered">Article, Video and Code coming soon!</div>
 
            <!-- TODO UPDATE LINKS -->
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://arxiv.org/pdf/2403.18765.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -130,10 +115,8 @@
                   <span>Paper</span>
                 </a>
               </span> -->
-
-              <!--
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2403.18765"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -142,19 +125,18 @@
                 </a>
               </span> -->
               <!-- Video Link. -->
-              <!--
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="https://www.youtube.com/watch?v=V5CwV2peNUw"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
                   </span>
                   <span>Video</span>
                 </a>
-              </span> -->
+              </span>
               <!-- Code Link. -->
               <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/gepetto/constraints-as-terminations"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -162,7 +144,6 @@
                   <span>Code</span>
                   </a>
               </span> -->
-
 
               <!-- Dataset Link. -->
               <!-- 
@@ -187,6 +168,16 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        WEBSITE UNDER CONSTRUCTION
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/parkour_no_audio_480p.mp4"
                 type="video/mp4">
@@ -196,7 +187,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -206,17 +197,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Deep Reinforcement Learning (RL) has demonstrated impressive results in solving complex robotic  tasks such as quadruped locomotion.
-            Yet, current solvers fail to produce efficient policies respecting hard constraints.
+            Deep Reinforcement Learning (RL) is now commonly used for controlling legged robots. 
+            Several recent studies have demonstrated impressive results in solving increasingly complex robotic tasks such as navigation in unstructured environments or loco-manipulation. 
+            However, this complexity often comes with intricate learning setups requiring tedious reward shaping and features to help convergence. 
           </p>
           <p>
-            In this work, we advocate for integrating constraints into robot learning and present <i>Constraints as Terminations</i> (<span class="dnerf">CaT</span>), a novel constrained RL algorithm.
-            Departing from classical constrained RL formulations, we reformulate constraints through stochastic terminations during policy learning: any violation of a constraint triggers a probability of terminating potential future rewards the RL agent could attain.
-            We propose an algorithmic approach to this formulation, by minimally modifying widely used off-the-shelf RL algorithms in robot learning (such as Proximal Policy Optimization).
-          </p>
-          <p>
-            Our approach leads to excellent constraint adherence without introducing undue complexity and computational overhead, thus mitigating barriers to broader adoption.
-            Through empirical evaluation on the real quadruped robot Solo crossing challenging obstacles, we demonstrate that <span class="dnerf">CaT</span> provides a compelling solution for incorporating constraints into RL frameworks.
+            In this work, we tackle these issues and achieve loco-manipulation with a humanoid robot using a RL algorithm that enforces constraints through stochastic terminations during policy learning. 
+            We keep the number of rewards low by reformulating them as constraints when they can be intuitively expressed that way. 
+            Moreover, we study the relevance of various learning features encountered in the literature and show that providing observations without noise or privileged information to the critic are two straightforward ways to boost locomotion performances on rough terrains. 
+            We also demonstrate that the proposed minimalist architecture is not limited to pure locomotion but extends to a loco-manipulation task involving upper limbs. 
           </p>
         </div>
       </div>
@@ -228,7 +217,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+          <iframe src="https://www.youtube.com/watch?v=V5CwV2peNUw"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
@@ -237,102 +226,103 @@
   </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="is-centered has-text-centered" style="padding-bottom:1em">
-        <h2 class="title is-3">Robust locomotion over challenging terrains</h2>
-      </div>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/front_stairs_no_audio_480p.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/slope_no_audio_480p.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/platform_no_audio_480p.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/sideways_stairs_no_audio_480p.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<!-- Simulation VS Real. -->
 <section class="section">
   <div class="container is-max-desktop">
 
+    <!-- Training for blind locomotion on rough terrain. -->
     <div class="columns is-centered">
-
-      <!-- Platform. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Platform</h2>
+      <div class="column is-full-width">
+        <h2 class="title is-3">Training for blind locomotion on rough terrain</h2>
+        <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">CaT</span> our Solo-12 robot can walk up stairs, traverse slopes, and climb 
-            over high obstacles. This 24-cm platform is almost as high as the quadruped in its default configuration.
+            We leverage <a href="https://constraints-as-terminations.github.io/">Constraints as Terminations</a> to perform a velocity tracking task on rough terrain while satisfying safety and style constraints. 
+            Observations include the measured positions and velocities of the 10 lower joints of the robot (5 per leg), the previous action, the waist angular velocity, the gravity vector projected in waist frame, central phases for each leg defined as cosine and sine pairs, and the linear and angular velocity command that the robot must track. 
+            Central phases are used to guide leg motion toward a desired gait pattern.
+            The action space consists of the desired joint position offsets with respect to a default joint configuration. The resulting target position is then converted into torques through a low level proportional-derivative controller. 
+            We train policies with a curriculum on the terrain difficulty using Isaac Gym.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/platform_side_no_audio.mp4"
-                    type="video/mp4">
-          </video>
         </div>
-      </div>
-      <!--/ Platform. -->
 
-      <!-- Limbo. -->
-      <div class="column">
-        <h2 class="title is-3">Limbo</h2>
+        <!-- Side by side videos. -->
         <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              <span class="dnerf">CaT</span> can enforce a wide variety of task-dependent constraints. Here, <span class="dnerf">CaT</span> 
-              limits the height of the base to learn crouching locomotion skills and pass under an obstacle.
-            </p>
-            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/limbo_no_audio_480p.mp4"
-                      type="video/mp4">
-            </video>
+          <!-- Walking on rough terrain. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/task_vel_tracking.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
           </div>
-
+          <!-- Terrain curriculum. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/training_curriculum.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Limbo. -->
+    <!--/ Training for blind locomotion on rough terrain. -->
 
-    <!-- Simulation VS Real. -->
+    <!-- Training for loco-manipulation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Training and sim-to-real transfer</h2>
+        <h2 class="title is-3"  style="padding-top:1em">Training for loco-manipulation</h2>
         <div class="content has-text-justified">
           <p>
-            The quadruped robot is trained with <span class="dnerf">CaT</span> in simulation using a height-map scan directly extracted from the generated terrain .
-            The learned policy is then directly deployed on the real robot. As Solo-12 is blind and knowing the obstacle course on which the robot is placed, 
-            we use external motion capture cameras to reconstruct the height-map of its surroundings based on its position and orientation in the world.
+            We extend our RL scheme to humanoid loco-manipulation for transporting a package in simulation. 
+            Most of the constraints from the blind locomotion are kept and the velocity commands is replaced by observations about the box and the target location.
           </p>
         </div>
+
+        <div class="columns is-centered">
+          <video id="dollyzoom" autoplay controls muted loop playsinline width="60%">
+            <source src="./static/videos/task_box_transport.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Side by side paragraphs. -->
+        <div class="columns is-centered">
+          <!-- Left column. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content has-text-justified">
+                <p>
+                  For simplicity, the robot starts in a position for which the package is placed between its hands. 
+                  This eases the pick-up procedure compared to more extensive works where the robot has to get into position first.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Right column. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content has-text-justified">
+                <p>
+                  The goal is to release the package atop another 90 cm pillar placed randomly in a half circle behind the robot with a radius of 1.5 m.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Side by side pictures. -->
         <div class="columns is-centered">
           <!-- Left column. -->
           <div class="column">
             <div class="columns is-centered">
               <div class="column content">
-                <img src="./static/images/simulation_step.png"/>
+                <img src="./static/images/cube_initial.png"/>
               </div>
             </div>
           </div>
@@ -340,99 +330,114 @@
           <div class="column">
             <div class="columns is-centered">
               <div class="column content">
-                <img src="./static/images/real_step.JPG"/>
+                <img src="./static/images/skyeye.png"/>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!--/ Simulation VS Real. -->
 
-    <!-- Platform/Limbo. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Experiment: climbing a high platform</h2>
+        <h2 class="title is-3" style="padding-top:1em">Transport over longer distances</h2>
+
+        <!-- Side by side videos. -->
         <div class="content has-text-justified">
           <p>
-            <span class="dnerf">CaT</span> can enforce safety constraints to ensure that policies learned in simulation will transfer well and safely to the physical robot once training is complete.
-            Here, joint torques mostly remain within the limits of ±3 Nm set during training even when climbing on a platform almost as high as the robot. Short violations can still 
-            happen in demanding situations due to the stochasticity of the policy, here during only 0.05s and up to 3.17 Nm (hightlighted in violet on the graph).
+            The package transport can be seamlessly extended to longer distances even if training was only done for a short one. 
+            To do so, we scale down the goal distance in the observations to go back to the training situation.
+            The robot can handle push disturbances even when transporting the box, as seen on the right video in the middle of the trajectory.
           </p>
         </div>
-        <br/>
         <div class="columns is-centered">
-          <div class="columns is-vcentered interpolation-panel" style="width:75%">
-            <!-- <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_start.jpg"
-                  class="interpolation-image"
-                  alt="Interpolate start reference image."/>
-              <p>Start Frame</p>
-            </div> -->
-            <div class="column interpolation-video-column">
-              <div id="interpolation-image-wrapper">
-                Loading...
+          <!-- Walking on rough terrain. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/box_d6.mp4"
+                          type="video/mp4">
+                </video>
               </div>
-              <input class="slider is-large is-info"
-                    id="interpolation-slider"
-                    step="1" min="0" max="200" value="0" type="range">
             </div>
-            <!-- <div class="column is-3 has-text-centered">
-              <img src="./static/images/interpolate_end.jpg"
-                  class="interpolation-image"
-                  alt="Interpolation end reference image."/>
-              <p class="is-bold">End Frame</p>
-            </div> -->
+          </div>
+          <!-- Terrain curriculum. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/box_d10_push.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!--/ Platform/Limbo. -->
-
-
-    <!-- Concurrent Work. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
 
         <div class="content has-text-justified">
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+            Going further, we can also achieve long distance navigation, including turns during transport, by regularly modifying the goal position to guide the robot along a path.
           </p>
         </div>
+        <div class="columns is-centered">
+          <video id="dollyzoom" autoplay controls muted loop playsinline width="60%">
+            <source src="./static/videos/transport_navigation.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <h2 class="title is-3" style="padding-top:1em">Changing the size of the package</h2>
+
+        <!-- Side by side videos. -->
+        <div class="content has-text-justified">
+          <p>
+            The robot can consistently transport smaller packages as well, here with a 15 centimeters box instead of the default 25 centimeters one.
+            However, although it can transport them, the robot struggles to properly release bigger packages at the goal location as it does not open the arms wide enough. 
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <!-- Walking on rough terrain. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/box_small.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <!-- Terrain curriculum. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/box_big.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
       </div>
-    </div> -->
-    <!--/ Concurrent Work. -->
+    </div>
+    <!--/ Training for loco-manipulation. -->
 
-  </div>
-</section>
-
-<!-- TODO LINK
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@misc{chanesane2024cat,
+      title={CaT: Constraints as Terminations for Legged Locomotion Reinforcement Learning},
+      author={Elliot Chane-Sane and Pierre-Alexandre Leziart and Thomas Flayols and Olivier Stasse and Philippe Souères and Nicolas Mansard},
+      year={2024},
+      eprint={2403.18765},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
 }</code></pre>
   </div>
+</section> -->
+  </div>
 </section>
--->
+
 
 <footer class="footer">
   <div class="container">
@@ -441,7 +446,7 @@
          href="./static/videos/nerfies_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a> --> <!-- TODO LINK -->
-      <a class="icon-link" href="https://github.com/constraints-as-terminations/constraints-as-terminations.github.io" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/humanoid-cat/humanoid-cat.github.io" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -457,7 +462,7 @@
             We thank <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a> for sharing their template.
           </p>
           <p>
-            You are free to borrow the <a href="https://github.com/constraints-as-terminations/constraints-as-terminations.github.io">source code</a> <!-- TODO LINK -->
+            You are free to borrow the <a href="https://github.com/humanoid-cat/humanoid-cat.github.io">source code</a> <!-- TODO LINK -->
             of this website, we just ask that you link back to this page in the footer, as well as to
             <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>.
           </p>
