@@ -1,7 +1,8 @@
-# Constraints as Terminations (CaT)
+# Learning Humanoid Loco-manipulation with Constraints as Terminations
 
-This repository contains the source code for the [Constraint as Terminations website](https://constraints-as-terminations.github.io), a work presented in **CaT: Constraints as Terminations for Legged Locomotion Reinforcement Learning** by  Elliot Chane-Sane\*, Pierre-Alexandre Leziart\*, Thomas Flayols, Olivier Stasse, Philippe Souères and Nicolas Mansard.
+This repository contains the source code for the [Learning Humanoid Loco-manipulation with Constraints as Terminations website](https://humanoid-cat.github.io), a work presented by  Pierre-Alexandre Leziart and Mitsuharu Morisawa.
 
+<!--
 If you find CaT useful for your work please cite:
 ```
 @misc{chanesane2024cat,
@@ -13,6 +14,7 @@ If you find CaT useful for your work please cite:
       primaryClass={cs.RO}
 }
 ```
+-->
 
 # Website License
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
